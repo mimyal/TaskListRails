@@ -1,11 +1,11 @@
 <h1>Show Tasks</h1>
 
-<h2><%= @entry[0] %></h2>
+<h2><%= @entry.title %></h2>
 <p>
-  <%= @entry[1] %>
+  <%= @entry.description %>
 </p>
 <p>
-  <%= "#{ @entry[2] ? "Task Completed" : "Task Incomplete." } #{ @entry[3] } " %>
+  <%= "#{ @entry.completion_status ? "Task Completed" : "Task Incomplete." } #{ @entry.completion_date } " %>
 </p>
 
 

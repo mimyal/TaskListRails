@@ -1,14 +1,16 @@
 <h1>All Tasks Are Belong To Us</h1>
 
-<!-- <%= @task %> -->
+<!-- <%= @task_entries %> -->
 
 
 <% @task_entries.each do |entry| %>
-<h2><%= entry[0] %></h2>
+<h3><%= link_to "#{entry.title}", task_path(entry) %></h3>
 <p>
-  <%= entry[1] %>
+  <%= "#{ entry.completion_status ? "Task Completed" : "Task Incomplete." } #{ entry.completion_date.to_s } " %>
 </p>
-<p>
-  <%= "#{ entry[2] ? "Task Completed" : "Task Incomplete." } #{ entry[3] } " %>
-</p>
+
 <% end %>
+
+<p>
+  Let's add more tasks <a href="/tasks/new" >here</a>!
+</p>
