@@ -1,0 +1,13 @@
+<h1>Show Tasks</h1>
+
+<h2><%= @entry[0] %></h2>
+<p>
+  <%= @entry[1] %>
+</p>
+<p>
+  <%= "#{ @entry[2] ? "Task Completed" : "Task Incomplete." } #{ @entry[3] } " %>
+</p>
+
+
+
+<%= link_to("back", root_path) %>

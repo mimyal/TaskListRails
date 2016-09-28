@@ -1,0 +1,14 @@
+<h1>All Tasks Are Belong To Us</h1>
+
+<!-- <%= @task %> -->
+
+
+<% @task_entries.each do |entry| %>
+<h2><%= entry[0] %></h2>
+<p>
+  <%= entry[1] %>
+</p>
+<p>
+  <%= "#{ entry[2] ? "Task Completed" : "Task Incomplete." } #{ entry[3] } " %>
+</p>
+<% end %>
