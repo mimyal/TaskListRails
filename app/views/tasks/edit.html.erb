@@ -1,4 +1,4 @@
-<%= form_for @task do |f| %>
+<%= form_for @task, match: :patch do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -18,7 +18,4 @@
   <%= link_to "Get back to tasks view", tasks_path %>
 </p>
 <p>
-</p>
-<p>
-  This form is new.html.erb
 </p>

@@ -7,10 +7,17 @@
 <h3><%= link_to "#{entry.title}", task_path(entry) %></h3>
 <p>
   <%= "#{ entry.completion_status ? "Task Completed" : "Task Incomplete." } #{ entry.completion_date.to_s } " %>
+  <%= link_to "Edit", task_edit_path(entry.id) %>
+</p>
+<p>
+  <!-- START HERE @todo add link to delete -->
+  <%= link_to "Delete with confirmation, not implemented", root_path %>
+
 </p>
 
 <% end %>
 
 <p>
   Let's add more tasks <a href="/tasks/new" >here</a>!
+
 </p>

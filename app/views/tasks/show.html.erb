@@ -1,13 +1,15 @@
-<h1>Show Tasks</h1>
+<h2>Task: <%= @entry.title %></h2>
 
-<h2><%= @entry.title %></h2>
 <p>
-  <%= @entry.description %>
+  Description: <%= @entry.description %>
 </p>
+<p>Owner: <%= @entry.owner %></p>
 <p>
   <%= "#{ @entry.completion_status ? "Task Completed" : "Task Incomplete." } #{ @entry.completion_date } " %>
 </p>
 
-
-
 <%= link_to("back", root_path) %>
+
+<p>
+  This is the show.html.erb page
+</p>

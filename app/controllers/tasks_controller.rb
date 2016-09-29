@@ -2,38 +2,50 @@ class TasksController < ApplicationController
 
   def index
     @task_entries = Task.all
-    # mini-csv with name, description, completion_status, completion_date
-    # @task_entries = [
-    #   ["Lunch Prep", "Pasta and cheese", false, nil],
-    #   ["Cat walk", "No further than two blocks", true, "08/19/12"],
-    #   ["Circus", "Run away with circus", false, nil]
-    # ]
   end
 
   #complete information about the task: name, description, completion status, and completion date
   def show
     @entry = Task.find(params[:id])
-    # @task_entry = {
-    #   name: "Lunch Prep",
-    #   description: "Pasta and meatballs",
-    #   completion_status: false,
-    #   completion_date: nil,
-    #   featured: true
-    # }
-
-    # task_entries = [
-    #   ["Lunch Prep", "Pasta and cheese", false, nil],
-    #   ["Cat walk", "No further than two blocks", true, "08/19/12"],
-    #   ["Circus", "Run away with circus", false, nil]
-    # ]
-    # entry_id = Integer(params[:id])
-    # @entry = task_entries[entry_id]
   end
 
-  def new; end
+  def new
+    @task = Task.new
+  end
 
   def create
-    redirect_to root_path
+    @task = Task.new(task_params)
+
+    if @task.save
+      # SAVED SUCCESSFULLY
+      redirect_to root_path
+      # redirect_to tasks_path # ?
+    else
+      # DID NOT SAVE
+      render :new
+    end
+  end
+
+  def edit # << LIKE NEW
+    @task = Task.find(params[:id])
+  end
+
+  def update # << LIKE CREATE
+    @task = Task.find(params[:id])
+    if @task.update(task_params)
+      redirect_to tasks_path
+    else
+      render :edit
+    end
+  end
+
+
+  # ##############
+  private
+  # ##############
+
+  def task_params
+    params.require(:task).permit(:title, :description, :owner)
   end
 
 end
