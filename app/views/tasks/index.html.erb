@@ -1,5 +1,8 @@
 <h1>All Tasks Are Belong To Us</h1>
 <p>
+  <a href="https://github.com/mimyal/TaskListRails/blob/master/README.md">ReadMe</a>
+</p>
+<p>
   Let's add more tasks <a href="/tasks/new" >here</a>!
 
 </p>
@@ -11,12 +14,11 @@
 <h3><%= link_to "#{entry.title}", task_path(entry) %></h3>
 <p>
   <%= short_time(entry) %>
+  <%= button_to "COMPLETE", task_completed_path(entry), :method => "patch" %>
   <%= link_to "Edit", task_edit_path(entry.id) %>
 </p>
 <p>
-  <!-- START HERE @todo add link to delete -->
-  <%= link_to "Delete with confirmation, not implemented", root_path %>
-
+  <%= link_to "Delete with confirmation", task_path(entry), method: :delete, data: { confirm: "Are you sure that this task must be deleted?" }%>
 </p>
 
 <% end %>

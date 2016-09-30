@@ -38,6 +38,19 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @task = Task.find(params[:id]).destroy
+    redirect_to tasks_path
+  end
+
+  def task_completed
+    @task = Task.find(params[:id])
+    if @task.completion_date == nil
+      @task.completion_date = Time.now
+      @task.save
+    end
+    redirect_to tasks_path
+  end
 
   # ##############
   private
