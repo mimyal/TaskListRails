@@ -4,7 +4,6 @@ class TasksController < ApplicationController
     @task_entries = Task.all
   end
 
-  #complete information about the task: name, description, completion status, and completion date
   def show
     @entry = Task.find(params[:id])
   end
@@ -45,7 +44,7 @@ class TasksController < ApplicationController
   # ##############
 
   def task_params
-    params.require(:task).permit(:title, :description, :owner)
+    params.require(:task).permit(:title, :description, :owner, :completion_date)
   end
 
 end
