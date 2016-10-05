@@ -14,8 +14,8 @@
 <h3><%= link_to "#{entry.title}", task_path(entry) %></h3>
 <p>
   <%= short_time(entry) %>
-  <%= button_to "COMPLETE", task_completed_path(entry), :method => "patch" %>
-  <%= link_to "Edit", task_edit_path(entry.id) %>
+  <%= button_to "COMPLETE", completed_task_path(entry), :method => "patch" %>
+  <%= link_to "Edit", edit_task_path(entry.id) %>
 </p>
 <p>
   <%= link_to "Delete with confirmation", task_path(entry), method: :delete, data: { confirm: "Are you sure that this task must be deleted?" }%>

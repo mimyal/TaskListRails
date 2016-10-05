@@ -43,7 +43,7 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
-  def task_completed
+  def completed_task
     @task = Task.find(params[:id])
     if @task.completion_date == nil
       @task.completion_date = Time.now
