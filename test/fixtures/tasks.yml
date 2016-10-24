@@ -4,12 +4,10 @@ one:
   title: MyString
   description: MyString
   owner: MyString
-  completion_status: false
   completion_date: 2016-09-28
 
 two:
   title: MyString
   description: MyString
   owner: MyString
-  completion_status: false
   completion_date: 2016-09-28

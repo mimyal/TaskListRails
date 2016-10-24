@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :require_login
 
   def index
     @task_entries = Task.all
@@ -58,6 +59,17 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:title, :description, :owner, :completion_date)
+  end
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def require_login
+    if current_user.nil?
+      flash[:error] = "You must be logged in to view this section"
+      redirect_to root_path
+    end
   end
 
 end

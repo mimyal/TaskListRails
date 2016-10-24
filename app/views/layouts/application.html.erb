@@ -7,7 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<header>
+  <h1><%= log_in_out_message %></h1>
+    <h3><%= flash[:error] %></h3>
+  <nav>
+  <p>
+    <a href="https://github.com/mimyal/TaskListRails/blob/master/README.md">ReadMe</a>
+  </p>
+  <p>
+    <a href="https://github.com/AdaGold/standalone-exercises/blob/master/tasklistrails-oauth.md">OAuth Exercise</a>
+  </p>
+  <p>
+    <%= link_to "Main Page", root_path %>
+  </p>
+  </nav>
+  <p>
+    <%= log_in_out_button %>
+  </p>
+</header>
 <%= yield %>
 
 </body>

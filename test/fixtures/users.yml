@@ -1,0 +1,23 @@
+first:
+  name: SomeOne
+  email: a@b.co
+  uid: 12345
+  provider: 'betsyhub'
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+second:
+  name: SomePerson
+  email: do@re.mi
+  uid: 23456
+  provider: 'betsyhub'
+
+third:
+  email: f@so.la
+  uid: 34567
+  provider: 'betsyhub'
+
+forth:
+  email: t@i.do
+  uid: 45678
+  provider: 'betsyhub'
