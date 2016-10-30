@@ -61,6 +61,9 @@ class TasksController < ApplicationController
     params.require(:task).permit(:title, :description, :owner, :completion_date)
   end
 
+# I put my current user here because I don't want the whole website to require login, only the tasks
+# See how the lecture had these two methods in the ApplicationController and
+# a skip_before_action :require_login, only: [:index, :create]
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end

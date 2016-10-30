@@ -15,6 +15,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore secrets
 .env
 
+# Ignore Apple
 .DS-Store

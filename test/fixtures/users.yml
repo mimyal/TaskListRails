@@ -21,3 +21,19 @@ forth:
   email: t@i.do
   uid: 45678
   provider: 'betsyhub'
+
+alma:
+  name: Alma
+  email: a@b.co
+  uid: 65432
+  provider: 'betsyhub'
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+ben:
+  name: Ben
+  email: b@a.co
+  uid: 54321
+  provider: 'betsyhub'
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

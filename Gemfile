@@ -33,6 +33,11 @@ gem 'omniauth-github'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :test do
+  gem 'minitest-reporters'
+  gem 'simplecov'
+end
+
 # For Heroku deployment
 group :production do
   gem 'pg'
