@@ -1,13 +1,37 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyString
-  owner: MyString
+# @TODO Note that there is no 'user' variable here and it's a big guess for a computer to know that here 'owners' mean 'users'
+
+one_alma:
+  title: MyTask
+  description: MyWeeklyTask
+  owner: Alma
   completion_date: 2016-09-28
 
-two:
-  title: MyString
-  description: MyString
-  owner: MyString
+two_alma:
+  title: MyOtherTask
+  description: MyDailyTask
+  owner: Alma
   completion_date: 2016-09-28
+
+three_alma:
+  title: MyMonthlyCheckup
+  description: MyMonthlyTask
+  owner: Alma
+
+one_ben:
+  title: Task
+  description: WeeklyTask
+  owner: Ben
+  completion_date: 2016-09-28
+
+two_ben:
+  title: OtherTask
+  description: DailyTask
+  owner: Ben
+  completion_date: 2016-09-28
+
+three_ben:
+  title: Checkup
+  description: MonthlyTask
+  owner: Ben

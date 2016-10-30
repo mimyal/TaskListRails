@@ -2,7 +2,8 @@ class SessionsController < ApplicationController
 
   def index
     if  session[:user_id].nil?
-      redirect_to login_failure_path
+      flash[:notice] = "You must be logged in first"
+      redirect_to root_path
     else
       @user = User.find(session[:user_id]) # < recalls the value set in a previous request
       # implicit call to
@@ -36,7 +37,7 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
     session.delete(:email)
-    redirect_to login_failure_path
+    redirect_to root_path
   end
 
 end
